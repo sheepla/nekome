@@ -40,7 +40,7 @@ You may not tweet only images.`,
 }
 
 func (a *App) execTweetCmd(c *cli.Command, f *pflag.FlagSet) error {
-	text := f.Arg(0)
+	text := strings.Join(f.Args(), " ")
 
 	// ツイート文が無いなら、エディタを起動
 	if text == "" {
